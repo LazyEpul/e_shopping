@@ -125,6 +125,7 @@ class Checkout(View):
         customer = Customer.objects.get(id=customer_id)
         cart = request.session.get('cart')
         products = Product.get_products_by_ids(list(cart.keys()))
+        print('Mobile no:-',type(contact_no),contact_no)
         for product in products:
             Orders.objects.create(product=product,
                                   customer=customer, quantity=cart.get(

@@ -75,7 +75,7 @@ class Orders(models.Model):
     quantity = models.IntegerField(default=1)
     price = models.IntegerField()
     address = models.CharField(max_length=200)
-    mobile_no = models.BigIntegerField()
+    mobile_no = models.BigIntegerField(null=True,blank=True)
     date = models.DateField(default=django.utils.timezone.now)
     status = models.CharField(max_length=10, default='Pending')
     
